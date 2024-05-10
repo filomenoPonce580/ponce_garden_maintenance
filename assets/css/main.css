@@ -183,6 +183,15 @@ input, select, textarea {
 		padding: 1em 0 1em 2em;
 	}
 
+	.logo{
+		width: 62%;
+	}
+		@media screen and (max-width: 980px){
+			.logo{
+				width: 65%;
+			}
+		}
+
 /* Container */
 
 	.container {
@@ -2997,7 +3006,7 @@ input, select, textarea {
 					position: absolute;
 					margin: 0;
 					left: 0;
-					top: 0.25em;
+					top: 2.5em;
 				}
 
 			.box.post .inner {

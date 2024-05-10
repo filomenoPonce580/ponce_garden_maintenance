@@ -65,7 +65,7 @@
 										<div class="row">
 											<section class="col-12-narrower">
 												<h3>Get In Touch</h3>
-												<form>
+												<form id="myForm">
 													<div class="row gtr-50">
 														<div class="col-6 col-12-mobilep">
 															<input type="text" name="name" id="name" placeholder="Name" />
@@ -126,6 +126,42 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+			<script>
+				(function () {
+					emailjs.init("B5LPUxn7XHBRiAt97"); // Replace with your User ID from EmailJS
+				})();
+			</script>
+			<script>
+				document.getElementById('myForm').addEventListener('submit', function (event) {
+					event.preventDefault();
+			
+					// Get form data
+					var formData = new FormData(event.target);
+					var name = formData.get('name');
+					var email = formData.get('email');
+					var message = formData.get('message');
+			
+					// Compose the email
+					var emailParams = {
+						from_name: name,
+						from_email: email,
+						message: message
+					};
+			
+					// Send email using EmailJS
+					emailjs.send('service_zrfnk6k', 'template_wc9ccyt', emailParams)
+						.then(function (response) {
+							console.log('Email sent:', response);
+							alert('Email sent successfully!');
+						}, function (error) {
+							console.error('Email failed:', error);
+							alert('Failed to send email.');
+						});
+				});
+			</script>
+
 
 	</body>
 </html>

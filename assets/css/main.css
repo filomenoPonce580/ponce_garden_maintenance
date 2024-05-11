@@ -198,6 +198,18 @@ input, select, textarea {
 			}
 		}
 
+		@media screen and (max-width: 550px){
+			.logo{
+				width: 305px;
+			}
+		}
+
+		@media screen and (max-width: 350px){
+			.logo{
+				width: 100%;
+			}
+		}
+
 /* Container */
 
 	.container {
